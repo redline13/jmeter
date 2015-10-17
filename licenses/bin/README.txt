@@ -19,9 +19,9 @@ excalibur-instrument-1.0.jar
 excalibur-logger-1.1.jar
 excalibur-pool-1.2.jar
 geronimo-jms_1.1_spec-1.1.1.jar
-httpclient-4.2.6.jar
-httpcore-4.2.5.jar
-httpmime-4.2.6.jar
+httpclient-4.5.1.jar
+httpcore-4.4.3.jar
+httpmime-4.5.1.jar
 jorphan.jar (part of JMeter)
 logkit-2.0.jar
 oro-2.0.8.jar

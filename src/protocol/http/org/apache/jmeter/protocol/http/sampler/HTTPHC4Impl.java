@@ -993,6 +993,8 @@ public class HTTPHC4Impl extends HTTPHCAbstractImpl {
             Charset charset = null;
             if(haveContentEncoding) {
                 charset = Charset.forName(contentEncoding);
+            } else {
+                charset = Charset.forName("US-ASCII");  // $NON-NLS-1$ this is the default used by HttpClient
             }
 
             // Write the request to our own stream

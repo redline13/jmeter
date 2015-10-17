@@ -35,6 +35,7 @@ import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 import org.apache.jmeter.samplers.SampleResult;
 
+import java.net.Socket;
 import javax.net.ssl.SSLSession;
 import java.io.IOException;
 import java.net.InetAddress;
@@ -124,6 +125,21 @@ public class MeasuringConnectionManager extends PoolingClientConnectionManager {
         @Override
         public SSLSession getSSLSession() {
             return handler.getSSLSession();
+        }
+
+        @Override
+        public Socket getSocket() {
+            return handler.getSocket();
+        }
+
+        @Override
+        public void bind(Socket socket) throws IOException {
+            handler.bind(socket);
+        }
+
+        @Override
+        public String getId() {
+            return handler.getId();
         }
 
         @Override
