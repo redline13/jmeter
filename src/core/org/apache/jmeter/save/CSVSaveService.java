@@ -779,7 +779,7 @@ public final class CSVSaveService {
     /**
      * Convert a result into a string, where the fields of the result are
      * separated by the default delimiter.
-     * 
+     *
      * @param event
      *            the sample event to be converted
      * @return the separated value representation of the result
@@ -849,21 +849,21 @@ public final class CSVSaveService {
     }
 
     /**
-     * Convert a result into a string, where the fields of the result are
+     * Convert a single result into a string, where the fields of the result are
      * separated by a specified String.
      * 
      * @param event
      *            the sample event to be converted
+     * @param sample
+     *            the sample result (or sample subresult) to convert
      * @param delimiter
      *            the separation string
      * @return the separated value representation of the result
      */
-    public static String resultToDelimitedString(SampleEvent event,
-            final String delimiter) {
-        StringQuoter text = new StringQuoter(delimiter.charAt(0));
+    public static String resultToDelimitedString(SampleEvent event, SampleResult sample,
+        SampleSaveConfiguration saveConfig, final String delimiter) {
 
-        SampleResult sample = event.getResult();
-        SampleSaveConfiguration saveConfig = sample.getSaveConfig();
+        StringQuoter text = new StringQuoter(delimiter.charAt(0));
 
         if (saveConfig.saveTimestamp()) {
             if (saveConfig.printMilliseconds()) {
@@ -909,8 +909,8 @@ public final class CSVSaveService {
 
             if (results != null) {
                 // Find the first non-null message
-                for (int i = 0; i < results.length; i++) {
-                    message = results[i].getFailureMessage();
+                for (AssertionResult result : results) {
+                    message = result.getFailureMessage();
                     if (message != null) {
                         break;
                     }
@@ -972,6 +972,34 @@ public final class CSVSaveService {
         }
 
         return text.toString();
+    }
+
+    /**
+     * Convert a result into a string, where the fields of the result are
+     * separated by a specified String.
+     *
+     * @param event
+     *            the sample event to be converted
+     * @param delimiter
+     *            the separation string
+     * @return the separated value representation of the result
+     */
+    public static String resultToDelimitedString(SampleEvent event,
+            final String delimiter) {
+
+        SampleResult sample = event.getResult();
+        SampleSaveConfiguration saveConfig = sample.getSaveConfig();
+        
+        String finalString = resultToDelimitedString( event, sample, saveConfig, delimiter );
+
+        if (saveConfig.saveSubresults()) {
+            SampleResult[] subResults = sample.getSubResults();
+            for (SampleResult subResult : subResults) {
+                finalString += System.lineSeparator() + resultToDelimitedString( event, subResult, saveConfig, delimiter );
+            }
+        }
+
+        return finalString;
     }
 
     // =================================== CSV quote/unquote handling
