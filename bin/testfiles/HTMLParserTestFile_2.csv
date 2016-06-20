@@ -1,2 +1,11 @@
 label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,grpThreads,allThreads,URL,Filename,Latency,Encoding,SampleCount,ErrorCount
 Download embedded,200,OK,Thread Group 1-1,text,true,,76144,1,1,file:testfiles/HTMLParserTestFile_2.html,,0,UTF-8,1,0
+file:testfiles/HTMLParserTestFile_2.html,200,OK,Thread Group 1-1,text,true,,40174,1,1,file:testfiles/HTMLParserTestFile_2.html,,0,UTF-8,1,0
+file:testfiles/HTMLParserTestFile_2_files/style.css,200,OK,Thread Group 1-1,text,true,,1321,1,1,file:testfiles/HTMLParserTestFile_2_files/style.css,,0,ISO-8859-1,1,0
+file:testfiles/HTMLParserTestFile_2_files/halfbanner.htm,200,OK,Thread Group 1-1,text,true,,5819,1,1,file:testfiles/HTMLParserTestFile_2_files/halfbanner.htm,,0,UTF-8,1,0
+file:testfiles/HTMLParserTestFile_2_files/jakarta-logo.gif,200,OK,Thread Group 1-1,text,true,,8584,1,1,file:testfiles/HTMLParserTestFile_2_files/jakarta-logo.gif,,0,ISO-8859-1,1,0
+file:testfiles/HTMLParserTestFile_2_files/logo.jpg,200,OK,Thread Group 1-1,text,true,,8886,1,1,file:testfiles/HTMLParserTestFile_2_files/logo.jpg,,0,ISO-8859-1,1,0
+file:testfiles/HTMLParserTestFile_2_files/http-config-example.png,200,OK,Thread Group 1-1,text,true,,3064,1,1,file:testfiles/HTMLParserTestFile_2_files/http-config-example.png,,0,ISO-8859-1,1,0
+file:testfiles/HTMLParserTestFile_2_files/scoping1.png,200,OK,Thread Group 1-1,text,true,,2395,1,1,file:testfiles/HTMLParserTestFile_2_files/scoping1.png,,0,ISO-8859-1,1,0
+file:testfiles/HTMLParserTestFile_2_files/scoping2.png,200,OK,Thread Group 1-1,text,true,,2641,1,1,file:testfiles/HTMLParserTestFile_2_files/scoping2.png,,0,ISO-8859-1,1,0
+file:testfiles/HTMLParserTestFile_2_files/scoping3.png,200,OK,Thread Group 1-1,text,true,,3260,1,1,file:testfiles/HTMLParserTestFile_2_files/scoping3.png,,0,ISO-8859-1,1,0
