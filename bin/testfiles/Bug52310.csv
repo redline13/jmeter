@@ -1,3 +1,11 @@
 ComputeIPAddr,200,OK,TG2 1-1,text,true
 HTTP-Request-HC31,200,OK,TG2 1-1,text,true
+http://jmeter.apache.org/,200,OK,TG2 1-1,text,true
+http://jmeter.apache.org/css/new-style.css,200,OK,TG2 1-1,text,true
+http://jmeter.apache.org/images/asf-logo.svg,200,OK,TG2 1-1,bin,true
+http://jmeter.apache.org/images/logo.svg,200,OK,TG2 1-1,bin,true
 HTTP-Request-HC4,200,OK,TG2 1-1,text,true
+http://jmeter.apache.org/,200,OK,TG2 1-1,text,true
+http://jmeter.apache.org/css/new-style.css,200,OK,TG2 1-1,text,true
+http://jmeter.apache.org/images/asf-logo.svg,200,OK,TG2 1-1,bin,true
+http://jmeter.apache.org/images/logo.svg,200,OK,TG2 1-1,bin,true
