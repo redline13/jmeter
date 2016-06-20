@@ -795,9 +795,8 @@ public final class CSVSaveService {
      * @return the separated value representation of the result
      */
     public static String resultToDelimitedString(SampleEvent event, SampleResult sample,
-        final String delimiter) {
+        SampleSaveConfiguration saveConfig, final String delimiter) {
 
-        SampleSaveConfiguration saveConfig = sample.getSaveConfig();
         StringQuoter text = new StringQuoter(delimiter.charAt(0));
 
         if (saveConfig.saveTimestamp()) {
@@ -929,12 +928,12 @@ public final class CSVSaveService {
         SampleResult sample = event.getResult();
         SampleSaveConfiguration saveConfig = sample.getSaveConfig();
         
-        String finalString = resultToDelimitedString( event, sample, delimiter );
+        String finalString = resultToDelimitedString( event, sample, saveConfig, delimiter );
 
         if (saveConfig.saveSubresults()) {
             SampleResult[] subResults = sample.getSubResults();
             for (SampleResult subResult : subResults) {
-                finalString += System.lineSeparator() + resultToDelimitedString( event, subResult, delimiter );
+                finalString += System.lineSeparator() + resultToDelimitedString( event, subResult, saveConfig, delimiter );
             }
         }
 
